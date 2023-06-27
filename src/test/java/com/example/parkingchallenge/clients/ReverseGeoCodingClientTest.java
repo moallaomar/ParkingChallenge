@@ -15,8 +15,8 @@ public class ReverseGeoCodingClientTest {
     private ReverseGeoCodingClient reverseGeoCodingClient;
 
     @Test
-    public void shouldReturnJson(){
-        String jsonLocation = reverseGeoCodingClient.getCityFromLatLong("json","43.670539","7.120827");
+    public void shouldReturnJson() {
+        String jsonLocation = reverseGeoCodingClient.getCityFromLatLong("json", "43.670539", "7.120827");
 
         Assertions.assertThat(jsonLocation).isNotNull();
     }

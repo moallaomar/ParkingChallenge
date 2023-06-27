@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { H2JpaConfig.class})
+@SpringBootTest(classes = {H2JpaConfig.class})
 @Sql("/initDB.sql")
 public class ParkingServiceImplTest {
 
@@ -22,10 +22,9 @@ public class ParkingServiceImplTest {
     private ParkingService parkingService;
 
 
-
     @Test
-    public void shouldReturnParkingList(){
-      List<Parking> parkingList =  parkingService.getAllNearestParking(0.345002261647649,46.58349874703973);
+    public void shouldReturnParkingList() {
+        List<Parking> parkingList = parkingService.getAllNearestParking(0.345002261647649, 46.58349874703973);
         Assertions.assertThat(parkingList).isNotEmpty();
     }
 }

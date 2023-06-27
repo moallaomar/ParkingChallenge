@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.net.URI;
 
-@FeignClient(name = "parking-client" ,url = "feignUrl")
+@FeignClient(name = "parking-client", url = "feignUrl")
 public interface ParkingClient {
 
     @GetMapping

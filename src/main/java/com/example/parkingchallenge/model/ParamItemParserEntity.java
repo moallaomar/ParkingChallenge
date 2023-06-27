@@ -8,13 +8,12 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "PARAM_ITEM_PARSER" , indexes = {
+@Table(name = "PARAM_ITEM_PARSER", indexes = {
         @Index(name = "IX_PARAM_ITEM_PARSER_CLIENT_PARAM_ID", columnList = "PARAM_ITEM_PARSER_CLIENT_PARAM_ID ASC")
 })
 @Entity
 @SequenceGenerator(name = "CLIENT_PARAMS_SEQ", sequenceName = "CLIENT_PARAMS_SEQ", allocationSize = 10)
 public class ParamItemParserEntity {
-
 
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CLIENT_PARAMS_SEQ")
@@ -23,7 +22,7 @@ public class ParamItemParserEntity {
     private Long id;
 
     @Basic
-    @Column(name = "PARAM_ITEM_PARSER_JSONNODE", nullable = false,length = 20)
+    @Column(name = "PARAM_ITEM_PARSER_JSONNODE", nullable = false, length = 20)
     private String jsonNodeToGet;
 
     @Basic

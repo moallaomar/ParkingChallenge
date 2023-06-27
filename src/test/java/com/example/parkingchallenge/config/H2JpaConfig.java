@@ -8,7 +8,9 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
+@ComponentScan(basePackages ="com.example.parkingchallenge" )
 @EnableJpaRepositories(basePackages = "com.example.parkingchallenge.repository")
+@PropertySource("classpath:application.properties")
 @EnableTransactionManagement
 public class H2JpaConfig {
 

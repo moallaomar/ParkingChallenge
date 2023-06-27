@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -17,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { H2JpaConfig.class})
+@SpringBootTest(classes = {H2JpaConfig.class})
 @Sql("/initDB.sql")
 @AutoConfigureMockMvc
 public class ParkingControllerTest {
@@ -30,7 +29,7 @@ public class ParkingControllerTest {
     @Test
     public void shouldReturnDistanceof0MeterParkingNotreDame() throws Exception {
         mvc.perform(get("/parkings?longitude=0.345002261647649&latitude=46.58349874703973")
-                .contentType(APPLICATION_JSON))
+                        .contentType(APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(APPLICATION_JSON))

@@ -18,6 +18,7 @@ public class ReverseGeoCodingServiceImpl implements ReverseGeoCodingService {
 
     /**
      * Récupération du nom de la ville ou de la commune à partir de la latitude et longitude en consultant OpenStreetMap
+     *
      * @param latitude
      * @param longitude
      * @return nom de la ville ou de la commune
@@ -29,21 +30,22 @@ public class ReverseGeoCodingServiceImpl implements ReverseGeoCodingService {
 
     /**
      * Récupération du nom de la ville ou de la commune à partir du json réponse d'OpenStreetMap
+     *
      * @param jsonLocation
      * @return nom de la ville ou de la commune
      */
     private String getTownOrCityFromJsonResponse(String jsonLocation) {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonNode = null;
-        if(jsonLocation.contains("error")){
+        if (jsonLocation.contains("error")) {
             throw new InvalidGeoCodeException("Merci de choisir une géolocalisation d'une ville ou  d'une commune");
         }
         try {
-            jsonNode=  objectMapper.readTree(jsonLocation).get("address");
-        }catch (IOException e) {
+            jsonNode = objectMapper.readTree(jsonLocation).get("address");
+        } catch (IOException e) {
             throw new RuntimeException("Erreur lors du parsing du json d'OpenStreetMap");
         }
-        if(!jsonLocation.contains("city")){
+        if (!jsonLocation.contains("city")) {
             return jsonNode.get("town").asText();
         }
         return jsonNode.get("city").asText();

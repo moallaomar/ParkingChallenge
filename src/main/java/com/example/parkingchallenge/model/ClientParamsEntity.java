@@ -1,4 +1,5 @@
 package com.example.parkingchallenge.model;
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "CLIENT_PARAMS" , indexes = {@Index(name = "IX_CLIENT_PARAMS_CITY_OR_TOWN", columnList = "CLIENT_PARAMS_CITY_OR_TOWN ASC")
+@Table(name = "CLIENT_PARAMS", indexes = {@Index(name = "IX_CLIENT_PARAMS_CITY_OR_TOWN", columnList = "CLIENT_PARAMS_CITY_OR_TOWN ASC")
 })
 @Entity
 @SequenceGenerator(name = "CLIENT_PARAMS_SEQ", sequenceName = "CLIENT_PARAMS_SEQ", allocationSize = 10)
@@ -18,8 +19,6 @@ import java.util.Set;
         attributeNodes = {
                 @NamedAttributeNode(value = "paramsItemParserList")})
 public class ClientParamsEntity {
-
-
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CLIENT_PARAMS_SEQ")
     @Id

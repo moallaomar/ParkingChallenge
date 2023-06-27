@@ -16,16 +16,16 @@ import java.util.List;
 @RestController
 public class ParkingController {
 
-        @Autowired
-        private ParkingService parkingService;
+    @Autowired
+    private ParkingService parkingService;
 
     @GetMapping
-    public ResponseEntity getNearestParking(@RequestParam  String longitude , @RequestParam String  latitude){
-      List<Parking> parkings  =   parkingService.getAllNearestParking(Double.valueOf(longitude),Double.valueOf(latitude));
-        if(parkings.isEmpty()){
+    public ResponseEntity getNearestParking(@RequestParam String longitude, @RequestParam String latitude) {
+        List<Parking> parkings = parkingService.getAllNearestParking(Double.valueOf(longitude), Double.valueOf(latitude));
+        if (parkings.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-        return  ResponseEntity.ok(parkings);
+        return ResponseEntity.ok(parkings);
     }
 
 
