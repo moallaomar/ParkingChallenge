@@ -4,6 +4,9 @@ drop table if exists PARAM_ITEM_PARSER CASCADE;;
 
 drop sequence if exists CLIENT_PARAMS_SEQ;;
 create sequence CLIENT_PARAMS_SEQ start with 1 increment by 10;;
+drop sequence if exists PARAM_ITEM_PARSER_SEQ;;
+create sequence PARAM_ITEM_PARSER_SEQ start with 1 increment by 10;;
+
 
 create table CLIENT_PARAMS
 (
