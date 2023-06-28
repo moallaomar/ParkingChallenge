@@ -15,6 +15,9 @@ GET : http://localhost:8080/parkings?longitude=0.345002261647649&latitude=46.583
 
 Si vous souhaitez également tester l'application à l'aide des tests unitaires et des tests d'intégration, ils sont également disponibles. Je tiens à préciser que je suis parti du principe que les URI comportent uniquement des query params et non des path params. 
 
+Dans un véritable projet, j'aurais apporté quelques modifications aux entités en utilisant des noms plus évocateurs. En effet, choisir des noms appropriés pour les entités est crucial, car cela permet de comprendre rapidement leur rôle et leur fonction dans le système. Des noms peu parlants peuvent rendre le code source difficile à comprendre et à maintenir.
+
+En ce qui concerne l'exception handling, j'aurais certainement apporté des améliorations. La gestion des exceptions est essentielle pour garantir la fiabilité et la robustesse d'une application. 
 
 Malheureusement, je ne suis pas fier de la partie où j'alimente la HashMap, en particulier la ligne 130 de la classe ParkingServiceImpl, qui fait le lien entre la première source de données et la deuxième.
 
