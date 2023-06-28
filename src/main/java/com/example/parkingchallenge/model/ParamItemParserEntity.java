@@ -12,11 +12,11 @@ import javax.persistence.*;
         @Index(name = "IX_PARAM_ITEM_PARSER_CLIENT_PARAM_ID", columnList = "PARAM_ITEM_PARSER_CLIENT_PARAM_ID ASC")
 })
 @Entity
-@SequenceGenerator(name = "CLIENT_PARAMS_SEQ", sequenceName = "CLIENT_PARAMS_SEQ", allocationSize = 10)
+@SequenceGenerator(name = "PARAM_ITEM_PARSER_SEQ", sequenceName = "PARAM_ITEM_PARSER_SEQ", allocationSize = 10)
 public class ParamItemParserEntity {
 
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CLIENT_PARAMS_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PARAM_ITEM_PARSER_SEQ")
     @Id
     @Column(name = "PARAM_ITEM_PARSER_ID")
     private Long id;
